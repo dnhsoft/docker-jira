@@ -5,7 +5,7 @@ jira:
   ports:
    - "8080:8080"
   volumes:
-   - ".data:/var/atlassian/application-data/jira/data"
+   - ".jira:/var/atlassian/application-data/jira"
 
 db:
   image: tutum/mysql:5.6
@@ -15,7 +15,7 @@ db:
    MYSQL_PASS: 123456
 
 pma:
-  image: dnhsoft/phpmyadmin:4.3
+  image: dnhsoft/phpmyadmin:4.4.3
   links:
    - db
   ports:
